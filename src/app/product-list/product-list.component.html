@@ -1,0 +1,25 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Admins List</h2>{{admins.result}}
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Precio</th>
+                    <th>Categoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products | async" (click)="productDetails(product.id)">
+                    <td>{{product.nombre}}</td>
+                    <td>{{product.descripcion}}</td>
+                    <td>{{product.precio}}</td>
+                    <td>{{product.categoria}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

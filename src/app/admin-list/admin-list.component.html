@@ -1,0 +1,24 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Admins List</h2>{{admins.result}}
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let admin of admins | async">
+                    <td>{{admin.usuario}}</td>
+                    <td>
+                        <button (click)="deleteAdmins(admin.id)" class="btn btn-danger">Delete</button>
+                        <button (click)="adminDetails(admin.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
